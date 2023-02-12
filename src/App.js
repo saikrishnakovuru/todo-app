@@ -1,20 +1,13 @@
 import "./App.css";
-import { Component } from "react";
+import {Component} from "react";
+import FirstComponent from "./components/learning-examples/FirstComponent";
 
 function App() {
   return (
     <div className="App">
-      My Todo Applictaion
-      <MyFirstComponent></MyFirstComponent>
-      <TestClassComponent />
-    </div>
-  );
-}
-
-function MyFirstComponent() {
-  return (
-    <div className="firstComponent">
-      This is my First react Component(Function component)
+      My Todo Applications
+      <FirstComponent/>
+      <TestClassComponent/>
     </div>
   );
 }
