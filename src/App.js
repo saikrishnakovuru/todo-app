@@ -1,21 +1,18 @@
 import "./App.css";
-import {Component} from "react";
-import FirstComponent from "./components/learning-examples/FirstComponent";
+import {Counter} from "./components/counter/Counter";
 
 function App() {
   return (
     <div className="App">
-      My Todo Applications
-      <FirstComponent/>
-      <TestClassComponent/>
+      <Counter/>
     </div>
   );
 }
 
-class TestClassComponent extends Component {
-  render() {
-    return <div className="TestClassComponent">Testing class component</div>;
-  }
-}
+// let testFunction = () => {
+//   console.log("testing");
+// }
 
+
+// testFunction();
 export default App;

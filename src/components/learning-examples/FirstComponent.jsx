@@ -1,4 +1,4 @@
-function FirstComponent() {
+export default function FirstComponent() {
   return (
     <div className="FirstComponent">
       This is my First react Component(Function component)
@@ -6,4 +6,11 @@ function FirstComponent() {
   );
 }
 
-export default FirstComponent;
+export function Seb() {
+  return (
+    <div className="FirstComponent">
+     Trying Seb with braces.
+    </div>
+  );
+}
+
