@@ -1,27 +1,59 @@
-import './Counter.css'
+import './Counter.css';
+import {useState} from "react";
+import PropTypes from "prop-types";
 
-export const Counter = () => {
-  // const buttonStyle = {
-  //   fontSize: "15px",
-  //   backgroundColor: "#00a5ab",
-  //   width: "100px",
-  //   margin: "10px",
-  //   color: "white",
-  //   padding: "15px",
-  //   borderRadius: "30px"
-  // };
+export const TestCounter = () => {
+  const [count, setCount] = useState(0);
 
-  const incrementCounterFunction = () => {
-    console.log("button clicked");
+  const incrementCounterParentFunction = (incOrDecValue) => {
+    setCount(preCount => preCount + incOrDecValue)
   }
 
-  return (<div className='Counter'>
-    <span className="count">0</span>
+  const decrementCounterParentFunction = (incOrDecValue) => {
+    setCount(count - incOrDecValue)
+  }
+
+  return (
     <div>
-      <button className="counterButton"
-              onClick={incrementCounterFunction}
-      >+1
-      </button>
+      <span className="count">{count}</span>
+      <Counter incOrDecValue={1} increment={incrementCounterParentFunction} decrement={decrementCounterParentFunction}/>
+      <Counter incOrDecValue={2} increment={incrementCounterParentFunction} decrement={decrementCounterParentFunction}/>
+      <Counter incOrDecValue={5} increment={incrementCounterParentFunction} decrement={decrementCounterParentFunction}/>
+      <button className="resetButton">Reset</button>
     </div>
-  </div>);
+  )
+}
+
+const Counter = ({incOrDecValue,increment,decrement}) => {
+  const [count, setCount] = useState(0);
+
+  const incrementCounterFunction = () => {
+    setCount(count + incOrDecValue);
+    increment(incOrDecValue)
+  }
+  const decrementCounterFunction = () => {
+    if (count !== 0) {
+      setCount(count - incOrDecValue);
+    decrement(incOrDecValue)
+    }
+  }
+  return (
+    <div className='Counter'>
+      <span className="count">{count}</span>
+      <div>
+        <button className="counterButton"
+                onClick={incrementCounterFunction}>
+          +{incOrDecValue}
+        </button>
+        <button className="counterButton"
+                onClick={decrementCounterFunction}>
+          -{incOrDecValue}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+Counter.asdf = {
+  incOrDecValue: PropTypes.number
 }

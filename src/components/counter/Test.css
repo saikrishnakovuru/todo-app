@@ -1,0 +1,24 @@
+.TestCounter{
+    padding: 20px;
+    font-size: 50px;
+    color: indianred;
+}
+
+.Button{
+    padding: 10px;
+    border-radius: 20px;
+    margin: 5px;
+    border-color: black;
+    border-width: 3px;
+}
+
+.resetButton{
+    margin: 20px;
+    background-Color: lightgreen;
+    width: 100px;
+    color: blueviolet;
+    padding: 10px;
+    border-radius: 30px;
+    border-color: black;
+    border-width: 3px;
+}
